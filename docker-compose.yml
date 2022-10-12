@@ -1,0 +1,13 @@
+services:
+  grafana-host:
+    image: grafana/grafana:8.2.3 
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    volumes:
+      - grafana-data:/var/lib/grafana
+      # - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+       
+
+volumes:
+  grafana-data:
